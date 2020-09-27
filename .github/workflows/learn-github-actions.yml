@@ -8,5 +8,6 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm i -g @angular/cli
       - run: ng new gh-app --defaults=true
+      - run: cd gh-app
       - run: ng build
-      - run: ng -v
+      - run: ng --version
