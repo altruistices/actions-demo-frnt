@@ -1,13 +1,21 @@
 name: install-ng-and-build
 on: [push]
 jobs:
-  install-ng-and-build:
+  deploy-to-heroku:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm i -g @angular/cli
-      - run: ng new gh-app --defaults=true
-      - run: cd gh-app
-      - run: ng build
-      - run: ng --version
+      - name: Git deploy to Heroku
+        # You may pin to the exact commit or the version.
+        # uses: onekiloparsec/heroku-node-deploy-subfolder@2e8f857249dd4915d62689c96ce32e16b7be5a44
+        uses: onekiloparsec/heroku-node-deploy-subfolder@v1.0.4
+        with:
+          # Your Heroku API key. This will be used for authentication. You can find it in your Heroku account settings
+          api_key: d5f1c310-3aef-4986-a50c-d7e793d13b60
+          # The email of your Heroku account.
+          email: shanukmr197@gmail.com
+          # The app name to use for deploying/updating
+          app_name: sample-app-453456546
+          # The branch that you would like to deploy to Heroku
+          branch: master
