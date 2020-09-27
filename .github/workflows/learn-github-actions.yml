@@ -18,4 +18,4 @@ jobs:
           # The app name to use for deploying/updating
           app_name: immense-basin-19295
           # The branch that you would like to deploy to Heroku
-          branch: master
+          branch: heroku
